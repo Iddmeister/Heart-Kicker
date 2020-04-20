@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Effects/ReParticles/ReParticles.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.588608, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.247727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+spread = 15.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.03
+scale_curve = SubResource( 2 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/Drop.svg-02da88df576998901365a49866775f17.stex"
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Particles2D
+
+
+func _on_Time_timeout():
+	queue_free()
+"
+
+[node name="ReParticles" instance=ExtResource( 1 )]
+amount = 15
+lifetime = 2.0
+speed_scale = 3.0
+explosiveness = 1.0
+local_coords = false
+process_material = SubResource( 3 )
+texture = SubResource( 4 )
+script = SubResource( 5 )
+
+[node name="Time" parent="." index="0"]
+wait_time = 4.0

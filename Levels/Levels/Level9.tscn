@@ -1,0 +1,152 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Spike/Spike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Spike/HSpike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Box/Box.tscn" type="PackedScene" id=5]
+
+[node name="Level" instance=ExtResource( 1 )]
+nextLevel = 10
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( -720818, 0, 0, -720817, 0, 0, -720816, 0, 0, -720815, 0, 0, -720814, 0, 0, -720813, 0, 0, -720812, 0, 0, -720811, 0, 0, -720810, 0, 0, -720809, 0, 0, -720808, 0, 0, -720807, 0, 0, -720806, 0, 0, -720805, 0, 0, -720804, 0, 0, -720803, 0, 0, -720802, 0, 0, -720801, 0, 0, -720800, 0, 0, -720799, 0, 0, -720798, 0, 0, -720797, 0, 0, -720796, 0, 0, -720795, 0, 0, -720794, 0, 0, -720793, 0, 0, -720792, 0, 0, -720791, 0, 0, -720790, 0, 0, -720789, 0, 0, -720788, 0, 0, -720787, 0, 0, -720786, 0, 0, -720785, 0, 0, -720784, 0, 0, -720783, 0, 0, -720782, 0, 0, -720781, 0, 0, -720780, 0, 0, -720779, 0, 0, -720778, 0, 0, -720777, 0, 0, -720776, 0, 0, -720775, 0, 0, -720774, 0, 0, -720773, 0, 0, -720772, 0, 0, -720771, 0, 0, -720770, 0, 0, -720769, 0, 0, -720768, 0, 0, -720767, 0, 0, -720766, 0, 0, -720765, 0, 0, -720764, 0, 0, -720763, 0, 0, -720762, 0, 0, -720761, 0, 0, -720760, 0, 0, -720759, 0, 0, -720758, 0, 0, -720757, 0, 0, -720756, 0, 0, -720755, 0, 0, -720754, 0, 0, -720753, 0, 0, -720752, 0, 0, -720751, 0, 0, -655282, 0, 0, -655258, 2, 0, -655215, 0, 0, -589746, 0, 0, -589721, 2, 0, -589679, 0, 0, -524210, 0, 0, -524190, 2, 0, -524189, 2, 0, -524188, 2, 0, -524187, 2, 0, -524186, 2, 0, -524185, 2, 0, -524184, 2, 0, -524143, 0, 0, -458674, 0, 0, -458649, 2, 0, -458607, 0, 0, -393163, 0, 0, -393162, 0, 0, -393161, 0, 0, -393160, 0, 0, -393159, 0, 0, -393158, 0, 0, -393157, 0, 0, -393156, 0, 0, -393155, 0, 0, -393154, 0, 0, -393153, 0, 0, -393152, 0, 0, -393151, 0, 0, -393150, 0, 0, -393149, 0, 0, -393148, 0, 0, -393147, 0, 0, -393146, 0, 0, -393145, 0, 0, -393138, 0, 0, -393114, 2, 0, -393071, 0, 0, -327627, 0, 0, -327609, 0, 0, -327602, 0, 0, -327596, 0, 0, -327595, 0, 0, -327594, 0, 0, -327593, 0, 0, -327592, 0, 0, -327591, 0, 0, -327590, 0, 0, -327589, 0, 0, -327588, 0, 0, -327587, 0, 0, -327586, 0, 0, -327585, 0, 0, -327584, 0, 0, -327583, 0, 0, -327582, 0, 0, -327581, 0, 0, -327580, 0, 0, -327579, 0, 0, -327578, 0, 0, -327577, 0, 0, -327576, 0, 0, -327575, 0, 0, -327574, 0, 0, -327573, 0, 0, -327572, 0, 0, -327571, 0, 0, -327570, 0, 0, -327569, 0, 0, -327568, 0, 0, -327567, 0, 0, -327566, 0, 0, -327565, 0, 0, -327564, 0, 0, -327563, 0, 0, -327562, 0, 0, -327561, 0, 0, -327560, 0, 0, -327535, 0, 0, -262091, 0, 0, -262073, 0, 0, -262066, 0, 0, -262060, 0, 0, -262024, 0, 0, -261999, 0, 0, -196576, 0, 0, -196575, 0, 0, -196574, 0, 0, -196573, 0, 0, -196572, 0, 0, -196571, 0, 0, -196570, 0, 0, -196569, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196565, 5, 0, -196564, 5, 0, -196563, 5, 0, -196562, 5, 0, -196561, 5, 0, -196560, 5, 0, -196559, 5, 0, -196558, 5, 0, -196557, 0, 0, -196556, 0, 0, -196555, 0, 0, -196537, 0, 0, -196530, 0, 0, -196524, 0, 0, -196488, 0, 0, -196463, 0, 0, -131040, 0, 0, -131001, 0, 0, -130994, 0, 0, -130988, 0, 0, -130952, 0, 0, -130927, 0, 0, -65504, 0, 0, -65465, 0, 0, -65458, 0, 0, -65452, 5, 0, -65416, 0, 0, -65391, 0, 0, 32, 0, 0, 71, 0, 0, 78, 0, 0, 84, 0, 0, 120, 0, 0, 145, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0, 65607, 0, 0, 65614, 0, 0, 65620, 0, 0, 65656, 0, 0, 65681, 0, 0, 131075, 0, 0, 131143, 0, 0, 131150, 0, 0, 131156, 0, 0, 131192, 0, 0, 131217, 0, 0, 196611, 0, 0, 196663, 0, 0, 196664, 0, 0, 196665, 0, 0, 196666, 0, 0, 196667, 5, 0, 196668, 5, 0, 196669, 5, 0, 196670, 0, 0, 196671, 0, 0, 196672, 0, 0, 196673, 0, 0, 196679, 0, 0, 196686, 5, 0, 196692, 0, 0, 196728, 0, 0, 196753, 0, 0, 262147, 0, 0, 262199, 0, 0, 262209, 0, 0, 262215, 0, 0, 262222, 0, 0, 262228, 0, 0, 262264, 0, 0, 262289, 0, 0, 327683, 0, 0, 327735, 0, 0, 327745, 0, 0, 327751, 5, 0, 327758, 0, 0, 327764, 0, 0, 327800, 0, 0, 327825, 0, 0, 393219, 0, 0, 393271, 0, 0, 393281, 0, 0, 393287, 0, 0, 393294, 0, 0, 393300, 0, 0, 393336, 0, 0, 393361, 0, 0, 458755, 0, 0, 458799, 0, 0, 458807, 0, 0, 458817, 0, 0, 458823, 0, 0, 458830, 0, 0, 458836, 5, 0, 458872, 0, 0, 458897, 0, 0, 524291, 0, 0, 524335, 0, 0, 524343, 0, 0, 524353, 5, 0, 524359, 0, 0, 524366, 0, 0, 524372, 0, 0, 524408, 0, 0, 524433, 0, 0, 589827, 0, 0, 589871, 0, 0, 589879, 0, 0, 589889, 0, 0, 589895, 0, 0, 589902, 0, 0, 589908, 0, 0, 589944, 0, 0, 589969, 0, 0, 655363, 0, 0, 655407, 0, 0, 655415, 0, 0, 655425, 0, 0, 655431, 0, 0, 655438, 0, 0, 655444, 0, 0, 655480, 0, 0, 655505, 0, 0, 720899, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720946, 0, 0, 720947, 0, 0, 720948, 0, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 720961, 0, 0, 720967, 5, 0, 720974, 0, 0, 720980, 0, 0, 721016, 0, 0, 721041, 0, 0, 786435, 0, 0, 786479, 0, 0, 786497, 0, 0, 786503, 0, 0, 786504, 0, 0, 786505, 0, 0, 786506, 0, 0, 786507, 0, 0, 786508, 0, 0, 786509, 0, 0, 786510, 0, 0, 786516, 0, 0, 786552, 0, 0, 786577, 0, 0, 851971, 0, 0, 852015, 0, 0, 852033, 0, 0, 852052, 0, 0, 852088, 0, 0, 852113, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 5, 0, 917535, 5, 0, 917536, 5, 0, 917537, 5, 0, 917538, 5, 0, 917539, 5, 0, 917540, 0, 0, 917541, 0, 0, 917542, 0, 0, 917543, 0, 0, 917544, 0, 0, 917545, 5, 0, 917546, 5, 0, 917547, 5, 0, 917548, 5, 0, 917549, 5, 0, 917550, 5, 0, 917551, 0, 0, 917569, 5, 0, 917588, 0, 0, 917624, 0, 0, 917625, 0, 0, 917626, 0, 0, 917627, 0, 0, 917628, 0, 0, 917629, 0, 0, 917630, 0, 0, 917631, 0, 0, 917632, 0, 0, 917633, 0, 0, 917634, 0, 0, 917635, 0, 0, 917639, 0, 0, 917640, 0, 0, 917641, 0, 0, 917642, 0, 0, 917643, 0, 0, 917644, 0, 0, 917645, 0, 0, 917646, 0, 0, 917647, 0, 0, 917648, 0, 0, 917649, 0, 0, 983105, 0, 0, 983124, 0, 0, 1048641, 0, 0, 1048660, 0, 0, 1114177, 0, 0, 1114178, 0, 0, 1114179, 0, 0, 1114180, 0, 0, 1114181, 0, 0, 1114182, 0, 0, 1114183, 0, 0, 1114184, 0, 0, 1114185, 0, 0, 1114186, 0, 0, 1114187, 0, 0, 1114188, 0, 0, 1114189, 0, 0, 1114190, 0, 0, 1114191, 0, 0, 1114192, 0, 0, 1114193, 0, 0, 1114194, 0, 0, 1114195, 0, 0, 1114196, 0, 0 )
+
+[node name="Player" parent="." index="2"]
+position = Vector2( 288, 425.398 )
+
+[node name="Heart" parent="." index="3"]
+position = Vector2( 576, 128 )
+
+[node name="Back" parent="Back" index="0"]
+modulate = Color( 0.254902, 0, 0.105882, 1 )
+
+[node name="HeartDispenser" parent="Objects" index="0"]
+position = Vector2( 576, 128 )
+
+[node name="Spike" parent="Objects" index="1" instance=ExtResource( 2 )]
+position = Vector2( 960, 448 )
+
+[node name="Spike2" parent="Objects" index="2" instance=ExtResource( 2 )]
+position = Vector2( 992, 448 )
+
+[node name="Spike3" parent="Objects" index="3" instance=ExtResource( 2 )]
+position = Vector2( 1024, 448 )
+
+[node name="Spike4" parent="Objects" index="4" instance=ExtResource( 2 )]
+position = Vector2( 1056, 448 )
+
+[node name="Spike5" parent="Objects" index="5" instance=ExtResource( 2 )]
+position = Vector2( 1088, 448 )
+
+[node name="Spike6" parent="Objects" index="6" instance=ExtResource( 2 )]
+position = Vector2( 1120, 448 )
+
+[node name="Spike12" parent="Objects" index="7" instance=ExtResource( 2 )]
+position = Vector2( 1312, 448 )
+
+[node name="Spike11" parent="Objects" index="8" instance=ExtResource( 2 )]
+position = Vector2( 1344, 448 )
+
+[node name="Spike10" parent="Objects" index="9" instance=ExtResource( 2 )]
+position = Vector2( 1376, 448 )
+
+[node name="Spike9" parent="Objects" index="10" instance=ExtResource( 2 )]
+position = Vector2( 1408, 448 )
+
+[node name="Spike8" parent="Objects" index="11" instance=ExtResource( 2 )]
+position = Vector2( 1440, 448 )
+
+[node name="Spike7" parent="Objects" index="12" instance=ExtResource( 2 )]
+position = Vector2( 1472, 448 )
+
+[node name="Spike18" parent="Objects" index="13" instance=ExtResource( 2 )]
+position = Vector2( 1408, -64 )
+rotation = 3.14159
+
+[node name="Spike17" parent="Objects" index="14" instance=ExtResource( 2 )]
+position = Vector2( 1440, -64 )
+rotation = 3.14159
+
+[node name="Spike16" parent="Objects" index="15" instance=ExtResource( 2 )]
+position = Vector2( 1472, -64 )
+rotation = 3.14159
+
+[node name="Spike15" parent="Objects" index="16" instance=ExtResource( 2 )]
+position = Vector2( 1504, -64 )
+rotation = 3.14159
+
+[node name="Spike14" parent="Objects" index="17" instance=ExtResource( 2 )]
+position = Vector2( 1536, -64 )
+rotation = 3.14159
+
+[node name="Spike13" parent="Objects" index="18" instance=ExtResource( 2 )]
+position = Vector2( 1568, -64 )
+rotation = 3.14159
+
+[node name="Spike19" parent="Objects" index="19" instance=ExtResource( 2 )]
+position = Vector2( 1600, -64 )
+rotation = 3.14159
+
+[node name="Spike20" parent="Objects" index="20" instance=ExtResource( 2 )]
+position = Vector2( 1632, -64 )
+rotation = 3.14159
+
+[node name="Spike26" parent="Objects" index="21" instance=ExtResource( 3 )]
+position = Vector2( 2688, 256 )
+rotation = -1.57079
+
+[node name="Spike31" parent="Objects" index="22" instance=ExtResource( 3 )]
+position = Vector2( 2272, 384 )
+rotation = -1.57079
+
+[node name="Spike32" parent="Objects" index="23" instance=ExtResource( 3 )]
+position = Vector2( 2272, 192 )
+rotation = -1.57079
+
+[node name="Spike33" parent="Objects" index="24" instance=ExtResource( 3 )]
+position = Vector2( 1888, 96 )
+
+[node name="Spike34" parent="Objects" index="25" instance=ExtResource( 3 )]
+position = Vector2( 1920, 96 )
+
+[node name="Spike35" parent="Objects" index="26" instance=ExtResource( 3 )]
+position = Vector2( 1952, 96 )
+
+[node name="Spike27" parent="Objects" index="27" instance=ExtResource( 3 )]
+position = Vector2( 2688, 0 )
+rotation = -1.57079
+
+[node name="Spike28" parent="Objects" index="28" instance=ExtResource( 3 )]
+position = Vector2( 2528, 96 )
+rotation = -4.71238
+
+[node name="Spike29" parent="Objects" index="29" instance=ExtResource( 3 )]
+position = Vector2( 2112, 256 )
+rotation = -4.71238
+
+[node name="Spike30" parent="Objects" index="30" instance=ExtResource( 3 )]
+position = Vector2( 2112, 448 )
+rotation = -4.71238
+
+[node name="Box" parent="Objects" index="31" instance=ExtResource( 5 )]
+position = Vector2( 2975.16, -180.45 )
+
+[node name="Box2" parent="Objects" index="32" instance=ExtResource( 5 )]
+position = Vector2( 3010.16, -181.45 )
+
+[node name="Box3" parent="Objects" index="33" instance=ExtResource( 5 )]
+position = Vector2( 3046.92, -181.45 )
+
+[node name="Box4" parent="Objects" index="34" instance=ExtResource( 5 )]
+position = Vector2( 3030.16, -219.815 )
+
+[node name="Box5" parent="Objects" index="35" instance=ExtResource( 5 )]
+position = Vector2( 2988.02, -219.815 )
+
+[node name="Box6" parent="Objects" index="36" instance=ExtResource( 5 )]
+position = Vector2( 3008.55, -258.721 )
+
+[node name="Pipe" parent="." index="7"]
+position = Vector2( 4265.95, 417.327 )
+rotation = 1.57079
+gravVec = Vector2( 0, 1 )

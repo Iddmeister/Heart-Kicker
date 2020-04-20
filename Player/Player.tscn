@@ -1,0 +1,164 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Player/PlayerSpritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Player/Camera.gd" type="Script" id=3]
+[ext_resource path="res://Player/jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Player/pull.wav" type="AudioStream" id=5]
+[ext_resource path="res://Player/death.wav" type="AudioStream" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": false,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": false,
+"name": "kick",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": false,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": false,
+"name": "wall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 9.36737
+height = 31.9761
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 119.729
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Heart",
+]]
+pause_mode = 1
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+maxSpeed = 600
+acceleration = 50
+deceleration = 0.3
+gravity = 20
+jumpPower = 600
+puntPower = 1000
+pullPower = 1400
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.960784, 0, 1 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 10 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
+shape = SubResource( 11 )
+
+[node name="PuntArea" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuntArea"]
+visible = false
+shape = SubResource( 12 )
+
+[node name="Space" type="Node" parent="."]
+
+[node name="Bond" type="Line2D" parent="Space"]
+z_index = -1
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 7.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Camera" type="Camera2D" parent="Space"]
+current = true
+zoom = Vector2( 1.2, 1.2 )
+script = ExtResource( 3 )
+
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="Left" type="RayCast2D" parent="Rays"]
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 4
+
+[node name="Right" type="RayCast2D" parent="Rays"]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 4
+
+[node name="KickTime" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Pull" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+pitch_scale = 0.8
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="body_entered" from="PuntArea" to="." method="_on_PuntArea_body_entered"]
+[connection signal="body_exited" from="PuntArea" to="." method="_on_PuntArea_body_exited"]
+[connection signal="timeout" from="KickTime" to="." method="_on_KickTime_timeout"]

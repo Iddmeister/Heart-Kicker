@@ -1,0 +1,150 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Door/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Speech/Speech.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Box/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Images/Keyboard_White_Mouse_Left.png" type="Texture" id=5]
+[ext_resource path="res://UI/Images/Keyboard_White_W.png" type="Texture" id=6]
+[ext_resource path="res://UI/Images/Keyboard_White_A.png" type="Texture" id=7]
+[ext_resource path="res://UI/Images/Keyboard_White_D.png" type="Texture" id=8]
+[ext_resource path="res://UI/Images/Keyboard_White_S.png" type="Texture" id=9]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+var triggered = false
+
+
+
+
+func _on_Trigger_body_entered(body):
+	if not triggered:
+		
+		get_parent().get_node(\"HeartDispenser\").open()
+		triggered = true
+		
+		Globals.camera.both = true
+		
+		var speech = get_parent().get_node(\"Speech2\")
+		
+		speech.displayText(\"Deliver the Heart to the Delivery Pipe\", 0.05)
+		
+		pass
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 217.529 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node
+
+var speech
+
+
+func _ready():
+	
+	Globals.camera.both = false
+	
+	speech = get_parent().get_node(\"Objects/Speech\")
+	
+	speech.displayText(\"Hello and Welcome to Heart Delivery Training\", 0.05)
+	yield(speech, \"done\")
+	yield(get_tree().create_timer(1.5), \"timeout\")
+	speech.displayText(\"If you complete the training successfully you will be deployed for real Heart Delivery\", 0.05)
+	yield(speech, \"done\")
+	yield(get_tree().create_timer(1.5), \"timeout\")
+	speech.displayText(\"Good Luck\", 0.05)
+	yield(speech, \"done\")
+	
+	get_parent().get_node(\"Objects/Door\").open()
+	
+	pass
+"
+
+[node name="Level" instance=ExtResource( 1 )]
+nextLevel = 2
+
+[node name="TileMap" parent="." index="1"]
+z_index = -5
+tile_data = PoolIntArray( 65498, 3, 0, 65499, 3, 0, 65500, 3, 0, 65501, 3, 0, 65502, 3, 0, 65503, 3, 0, 65504, 3, 0, 65505, 3, 0, 65506, 3, 0, 65507, 3, 0, 65508, 3, 0, 65509, 3, 0, 65510, 3, 0, 65511, 3, 0, 65512, 3, 0, 131034, 3, 0, 131048, 3, 0, 196570, 3, 0, 196584, 3, 0, 196593, 3, 0, 196594, 3, 0, 196595, 3, 0, 196596, 3, 0, 196597, 3, 0, 196598, 3, 0, 196599, 3, 0, 196600, 3, 0, 196601, 3, 0, 196602, 3, 0, 196603, 3, 0, 196604, 3, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 3, 0, 131088, 3, 0, 131089, 3, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 131095, 3, 0, 131096, 3, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131103, 3, 0, 131104, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 131108, 3, 0, 131109, 3, 0, 131110, 3, 0, 131111, 3, 0, 131112, 3, 0, 131113, 3, 0, 131114, 3, 0, 131115, 3, 0, 131116, 3, 0, 131117, 3, 0, 131118, 3, 0, 131119, 3, 0, 262106, 3, 0, 262120, 3, 0, 262129, 3, 0, 196629, 3, 0, 196655, 3, 0, 327607, 3, 0, 327608, 3, 0, 327609, 3, 0, 327610, 3, 0, 327611, 3, 0, 327612, 3, 0, 327613, 3, 0, 327614, 3, 0, 327615, 3, 0, 327616, 3, 0, 327617, 3, 0, 327642, 3, 0, 327656, 3, 0, 327665, 3, 0, 262165, 3, 0, 262191, 3, 0, 393143, 3, 0, 393153, 3, 0, 393178, 3, 0, 393192, 3, 0, 393201, 3, 0, 327701, 3, 0, 327727, 3, 0, 458679, 3, 0, 458689, 3, 0, 458714, 3, 0, 458718, 3, 0, 458719, 3, 0, 458720, 3, 0, 458721, 3, 0, 458722, 3, 0, 458723, 3, 0, 458724, 3, 0, 458728, 3, 0, 458737, 3, 0, 458741, 3, 0, 458742, 3, 0, 458743, 3, 0, 458744, 3, 0, 458745, 3, 0, 458746, 3, 0, 458747, 3, 0, 458748, 3, 0, 458749, 3, 0, 458750, 3, 0, 458751, 3, 0, 393216, 3, 0, 393217, 3, 0, 393237, 3, 0, 393263, 3, 0, 524215, 3, 0, 524225, 3, 0, 524250, 3, 0, 524254, 3, 0, 524260, 3, 0, 524264, 3, 0, 524273, 3, 0, 524277, 3, 0, 458753, 3, 0, 458773, 3, 0, 589751, 3, 0, 589761, 3, 0, 589786, 3, 0, 589790, 3, 0, 589796, 3, 0, 589800, 3, 0, 589809, 3, 0, 589813, 3, 0, 524289, 3, 0, 524309, 3, 0, 655287, 3, 0, 655297, 3, 0, 655322, 3, 0, 655326, 3, 0, 655332, 3, 0, 655336, 3, 0, 655345, 3, 0, 655349, 3, 0, 589825, 3, 0, 720823, 3, 0, 720833, 3, 0, 720834, 3, 0, 720835, 3, 0, 720836, 3, 0, 720837, 3, 0, 720838, 3, 0, 720839, 3, 0, 720840, 3, 0, 720841, 3, 0, 720842, 3, 0, 720843, 3, 0, 720844, 3, 0, 720845, 3, 0, 720846, 3, 0, 720847, 3, 0, 720848, 3, 0, 720849, 3, 0, 720850, 3, 0, 720851, 3, 0, 720852, 3, 0, 720853, 3, 0, 720854, 3, 0, 720855, 3, 0, 720856, 3, 0, 720857, 3, 0, 720858, 3, 0, 720862, 3, 0, 720868, 3, 0, 720872, 3, 0, 720873, 3, 0, 720874, 3, 0, 720875, 3, 0, 720876, 3, 0, 720877, 3, 0, 720878, 3, 0, 720879, 3, 0, 720880, 3, 0, 720881, 3, 0, 720885, 3, 0, 655361, 3, 0, 655407, 3, 0, 786359, 3, 0, 786398, 3, 0, 786404, 3, 0, 786421, 3, 0, 720897, 3, 0, 720930, 3, 0, 720931, 3, 0, 720932, 3, 0, 720933, 3, 0, 720934, 3, 0, 720935, 3, 0, 720936, 3, 0, 720937, 3, 0, 720938, 3, 0, 720939, 3, 0, 720940, 3, 0, 720941, 3, 0, 720942, 3, 0, 720943, 3, 0, 851895, 3, 0, 851934, 3, 0, 851940, 3, 0, 851957, 3, 0, 786433, 3, 0, 786466, 3, 0, 917431, 3, 0, 917470, 3, 0, 917476, 3, 0, 917493, 3, 0, 851969, 3, 0, 852002, 3, 0, 982967, 3, 0, 982968, 3, 0, 982969, 3, 0, 982970, 3, 0, 982971, 3, 0, 982972, 3, 0, 982973, 3, 0, 982974, 3, 0, 982975, 3, 0, 982976, 3, 0, 982977, 3, 0, 982978, 3, 0, 982979, 3, 0, 982980, 3, 0, 982981, 3, 0, 982982, 3, 0, 982983, 3, 0, 982984, 3, 0, 982985, 3, 0, 982986, 3, 0, 982987, 3, 0, 982988, 3, 0, 982989, 3, 0, 982990, 3, 0, 982991, 3, 0, 982992, 3, 0, 982993, 3, 0, 982994, 3, 0, 982995, 3, 0, 982996, 3, 0, 982997, 3, 0, 982998, 3, 0, 982999, 3, 0, 983000, 3, 0, 983001, 3, 0, 983002, 3, 0, 983003, 3, 0, 983004, 3, 0, 983005, 3, 0, 983006, 3, 0, 983007, 3, 0, 983008, 3, 0, 983009, 3, 0, 983010, 3, 0, 983011, 3, 0, 983012, 3, 0, 983013, 3, 0, 983014, 3, 0, 983015, 3, 0, 983016, 3, 0, 983017, 3, 0, 983018, 3, 0, 983019, 3, 0, 983020, 3, 0, 983021, 3, 0, 983022, 3, 0, 983023, 3, 0, 983024, 3, 0, 983025, 3, 0, 983026, 3, 0, 983027, 3, 0, 983028, 3, 0, 983029, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 3, 0, 917518, 3, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 3, 0, 917527, 3, 0, 917528, 3, 0, 917529, 3, 0, 917530, 3, 0, 917531, 3, 0, 917532, 3, 0, 917533, 3, 0, 917534, 3, 0, 917535, 3, 0, 917536, 3, 0, 917537, 3, 0, 917538, 3, 0 )
+
+[node name="Player" parent="." index="2"]
+position = Vector2( -2165.42, 422.991 )
+
+[node name="Heart" parent="." index="3"]
+position = Vector2( 512, 160 )
+
+[node name="HeartDispenser" parent="Objects" index="0"]
+position = Vector2( 512, 160 )
+openOnStart = false
+
+[node name="Door" parent="Objects" index="1" instance=ExtResource( 2 )]
+position = Vector2( -2016, 352 )
+
+[node name="Speech" parent="Objects" index="2" instance=ExtResource( 3 )]
+margin_left = -2422.75
+margin_top = 513.851
+margin_right = -1908.75
+margin_bottom = 669.851
+
+[node name="Speech2" parent="Objects" index="3" instance=ExtResource( 3 )]
+margin_left = 241.436
+margin_top = 513.851
+margin_right = 755.436
+margin_bottom = 669.851
+
+[node name="Box" parent="Objects" index="4" instance=ExtResource( 4 )]
+position = Vector2( -1390.99, 423.069 )
+
+[node name="Box2" parent="Objects" index="5" instance=ExtResource( 4 )]
+position = Vector2( -1373.03, 389 )
+
+[node name="Box3" parent="Objects" index="6" instance=ExtResource( 4 )]
+position = Vector2( -1357.03, 423.069 )
+
+[node name="Trigger" type="Area2D" parent="Objects" index="7"]
+position = Vector2( 164.981, 264.984 )
+collision_layer = 32
+collision_mask = 2
+script = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Trigger" index="0"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Objects" index="8"]
+position = Vector2( -1373.03, 248.984 )
+texture = ExtResource( 5 )
+
+[node name="WASD" type="Node2D" parent="Objects" index="9"]
+position = Vector2( -2165.42, 304.984 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Objects/WASD" index="0"]
+position = Vector2( 0, -71.1626 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="Objects/WASD" index="1"]
+position = Vector2( -74.7671, 0 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="Objects/WASD" index="2"]
+position = Vector2( 74.4756, 0 )
+texture = ExtResource( 8 )
+
+[node name="Sprite4" type="Sprite" parent="Objects/WASD" index="3"]
+texture = ExtResource( 9 )
+
+[node name="Pipe" parent="." index="7"]
+position = Vector2( 1439.79, 264.984 )
+
+[node name="C" type="Node" parent="." index="8"]
+script = SubResource( 3 )
+[connection signal="body_entered" from="Objects/Trigger" to="Objects/Trigger" method="_on_Trigger_body_entered"]

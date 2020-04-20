@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://UI/Main/Main.gd" type="Script" id=1]
+[ext_resource path="res://UI/Fonts/Sen-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Heart/Heart.svg" type="Texture" id=3]
+[ext_resource path="res://UI/Fonts/Sen-ExtraBold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.701961, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.0941176, 0.0941176, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 262.0
+margin_top = 95.0
+margin_right = 762.0
+margin_bottom = 505.0
+custom_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer2"]
+margin_right = 500.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 500, 0 )
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer2/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer2/TextureRect/CenterContainer"]
+margin_left = 47.0
+margin_top = 56.0
+margin_right = 452.0
+margin_bottom = 134.0
+custom_fonts/font = SubResource( 5 )
+text = "Heart Kicker"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer2"]
+margin_top = 240.0
+margin_right = 500.0
+margin_bottom = 410.0
+mouse_filter = 0
+custom_constants/separation = 10
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer2/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 50 )
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Play"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 60.0
+margin_right = 500.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 300, 50 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Options & Credits"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 120.0
+margin_right = 500.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 300, 50 )
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Quit"
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

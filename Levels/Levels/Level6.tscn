@@ -1,0 +1,312 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Spike/HSpike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Spike/PSpike.tscn" type="PackedScene" id=3]
+
+[node name="Level" instance=ExtResource( 1 )]
+nextLevel = 7
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 3, 0, 131088, 3, 0, 131089, 3, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 131095, 3, 0, 131096, 3, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131103, 3, 0, 131104, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 131108, 3, 0, 131109, 3, 0, 131110, 3, 0, 131111, 3, 0, 131112, 3, 0, 131113, 3, 0, 131114, 3, 0, 131115, 3, 0, 131116, 3, 0, 131117, 3, 0, 131118, 3, 0, 131119, 3, 0, 131120, 3, 0, 131121, 3, 0, 131122, 3, 0, 131123, 3, 0, 131127, 3, 0, 131128, 3, 0, 131129, 3, 0, 131130, 3, 0, 131131, 3, 0, 196609, 3, 0, 196632, 2, 0, 196633, 2, 0, 196634, 2, 0, 196635, 2, 0, 196636, 2, 0, 196637, 2, 0, 196638, 2, 0, 196639, 2, 0, 196640, 2, 0, 196641, 2, 0, 196642, 2, 0, 196643, 2, 0, 196644, 2, 0, 196645, 2, 0, 196646, 2, 0, 196647, 2, 0, 196648, 2, 0, 196655, 3, 0, 196667, 3, 0, 262145, 3, 0, 262168, 2, 0, 262169, 2, 0, 262170, 2, 0, 262171, 2, 0, 262172, 2, 0, 262173, 2, 0, 262174, 2, 0, 262175, 2, 0, 262176, 2, 0, 262177, 2, 0, 262178, 2, 0, 262179, 2, 0, 262180, 2, 0, 262181, 2, 0, 262182, 2, 0, 262183, 2, 0, 262184, 2, 0, 262191, 3, 0, 262203, 3, 0, 327681, 3, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 327712, 2, 0, 327713, 2, 0, 327714, 2, 0, 327715, 2, 0, 327716, 2, 0, 327717, 2, 0, 327718, 2, 0, 327719, 2, 0, 327720, 2, 0, 327727, 3, 0, 327739, 3, 0, 393217, 3, 0, 393240, 2, 0, 393241, 2, 0, 393242, 2, 0, 393243, 2, 0, 393244, 2, 0, 393245, 2, 0, 393246, 2, 0, 393247, 2, 0, 393248, 2, 0, 393249, 2, 0, 393250, 2, 0, 393251, 2, 0, 393252, 2, 0, 393253, 2, 0, 393254, 2, 0, 393255, 2, 0, 393256, 2, 0, 393263, 3, 0, 393275, 3, 0, 458753, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458782, 3, 0, 458783, 3, 0, 458784, 3, 0, 458785, 3, 0, 458786, 3, 0, 458787, 3, 0, 458788, 3, 0, 458789, 3, 0, 458790, 3, 0, 458791, 3, 0, 458792, 3, 0, 458799, 3, 0, 458811, 3, 0, 524289, 3, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524320, 2, 0, 524321, 2, 0, 524322, 2, 0, 524323, 2, 0, 524324, 2, 0, 524325, 2, 0, 524326, 2, 0, 524327, 2, 0, 524328, 2, 0, 524347, 3, 0, 589825, 3, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 589854, 2, 0, 589855, 2, 0, 589856, 2, 0, 589857, 2, 0, 589858, 2, 0, 589859, 2, 0, 589860, 2, 0, 589861, 2, 0, 589862, 2, 0, 589863, 2, 0, 589864, 2, 0, 589883, 3, 0, 655361, 3, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 655387, 2, 0, 655388, 2, 0, 655389, 2, 0, 655390, 2, 0, 655391, 2, 0, 655392, 2, 0, 655393, 2, 0, 655394, 2, 0, 655395, 2, 0, 655396, 2, 0, 655397, 2, 0, 655398, 2, 0, 655399, 2, 0, 655400, 2, 0, 655419, 3, 0, 720897, 3, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0, 720923, 2, 0, 720924, 2, 0, 720925, 2, 0, 720926, 2, 0, 720927, 2, 0, 720928, 2, 0, 720929, 2, 0, 720930, 2, 0, 720931, 2, 0, 720932, 2, 0, 720933, 2, 0, 720934, 2, 0, 720935, 2, 0, 720936, 2, 0, 720955, 3, 0, 786433, 3, 0, 786434, 3, 0, 786435, 3, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 3, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786450, 3, 0, 786451, 3, 0, 786452, 3, 0, 786453, 3, 0, 786454, 3, 0, 786455, 3, 0, 786456, 3, 0, 786457, 3, 0, 786458, 3, 0, 786459, 3, 0, 786460, 3, 0, 786461, 3, 0, 786462, 3, 0, 786463, 3, 0, 786464, 3, 0, 786465, 3, 0, 786466, 3, 0, 786467, 3, 0, 786468, 3, 0, 786469, 3, 0, 786470, 3, 0, 786471, 3, 0, 786472, 3, 0, 786473, 3, 0, 786474, 3, 0, 786475, 3, 0, 786476, 3, 0, 786477, 3, 0, 786478, 3, 0, 786479, 3, 0, 786480, 3, 0, 786481, 3, 0, 786482, 3, 0, 786483, 3, 0, 786484, 3, 0, 786485, 3, 0, 786486, 3, 0, 786487, 3, 0, 786488, 3, 0, 786489, 3, 0, 786490, 3, 0, 786491, 3, 0 )
+
+[node name="Heart" parent="." index="3"]
+position = Vector2( 160, 160 )
+
+[node name="HeartDispenser" parent="Objects" index="0"]
+position = Vector2( 160, 160 )
+
+[node name="HSpikes" type="Node2D" parent="Objects" index="1"]
+
+[node name="Spike" parent="Objects/HSpikes" index="0" instance=ExtResource( 2 )]
+position = Vector2( 128, 384 )
+z_index = 0
+
+[node name="Spike2" parent="Objects/HSpikes" index="1" instance=ExtResource( 2 )]
+position = Vector2( 160, 384 )
+z_index = 0
+
+[node name="Spike3" parent="Objects/HSpikes" index="2" instance=ExtResource( 2 )]
+position = Vector2( 96, 384 )
+z_index = 0
+
+[node name="Spike4" parent="Objects/HSpikes" index="3" instance=ExtResource( 2 )]
+position = Vector2( 192, 384 )
+z_index = 0
+
+[node name="Spike5" parent="Objects/HSpikes" index="4" instance=ExtResource( 2 )]
+position = Vector2( 800, 384 )
+z_index = 0
+
+[node name="Spike21" parent="Objects/HSpikes" index="5" instance=ExtResource( 2 )]
+position = Vector2( 832, 384 )
+z_index = 0
+
+[node name="Spike22" parent="Objects/HSpikes" index="6" instance=ExtResource( 2 )]
+position = Vector2( 864, 384 )
+z_index = 0
+
+[node name="Spike23" parent="Objects/HSpikes" index="7" instance=ExtResource( 2 )]
+position = Vector2( 896, 384 )
+z_index = 0
+
+[node name="Spike27" parent="Objects/HSpikes" index="8" instance=ExtResource( 2 )]
+position = Vector2( 928, 384 )
+z_index = 0
+
+[node name="Spike26" parent="Objects/HSpikes" index="9" instance=ExtResource( 2 )]
+position = Vector2( 960, 384 )
+z_index = 0
+
+[node name="Spike25" parent="Objects/HSpikes" index="10" instance=ExtResource( 2 )]
+position = Vector2( 992, 384 )
+z_index = 0
+
+[node name="Spike24" parent="Objects/HSpikes" index="11" instance=ExtResource( 2 )]
+position = Vector2( 1024, 384 )
+z_index = 0
+
+[node name="Spike31" parent="Objects/HSpikes" index="12" instance=ExtResource( 2 )]
+position = Vector2( 1056, 384 )
+z_index = 0
+
+[node name="Spike30" parent="Objects/HSpikes" index="13" instance=ExtResource( 2 )]
+position = Vector2( 1088, 384 )
+z_index = 0
+
+[node name="Spike29" parent="Objects/HSpikes" index="14" instance=ExtResource( 2 )]
+position = Vector2( 1120, 384 )
+z_index = 0
+
+[node name="Spike28" parent="Objects/HSpikes" index="15" instance=ExtResource( 2 )]
+position = Vector2( 1152, 384 )
+z_index = 0
+
+[node name="Spike32" parent="Objects/HSpikes" index="16" instance=ExtResource( 2 )]
+position = Vector2( 1184, 384 )
+z_index = 0
+
+[node name="Spike33" parent="Objects/HSpikes" index="17" instance=ExtResource( 2 )]
+position = Vector2( 1216, 384 )
+z_index = 0
+
+[node name="Spike34" parent="Objects/HSpikes" index="18" instance=ExtResource( 2 )]
+position = Vector2( 1248, 384 )
+z_index = 0
+
+[node name="Spike6" parent="Objects/HSpikes" index="19" instance=ExtResource( 2 )]
+position = Vector2( 832, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike7" parent="Objects/HSpikes" index="20" instance=ExtResource( 2 )]
+position = Vector2( 864, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike8" parent="Objects/HSpikes" index="21" instance=ExtResource( 2 )]
+position = Vector2( 896, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike9" parent="Objects/HSpikes" index="22" instance=ExtResource( 2 )]
+position = Vector2( 928, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike10" parent="Objects/HSpikes" index="23" instance=ExtResource( 2 )]
+position = Vector2( 960, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike15" parent="Objects/HSpikes" index="24" instance=ExtResource( 2 )]
+position = Vector2( 992, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike14" parent="Objects/HSpikes" index="25" instance=ExtResource( 2 )]
+position = Vector2( 1024, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike13" parent="Objects/HSpikes" index="26" instance=ExtResource( 2 )]
+position = Vector2( 1056, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike12" parent="Objects/HSpikes" index="27" instance=ExtResource( 2 )]
+position = Vector2( 1088, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike11" parent="Objects/HSpikes" index="28" instance=ExtResource( 2 )]
+position = Vector2( 1120, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike20" parent="Objects/HSpikes" index="29" instance=ExtResource( 2 )]
+position = Vector2( 1152, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike19" parent="Objects/HSpikes" index="30" instance=ExtResource( 2 )]
+position = Vector2( 1184, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike18" parent="Objects/HSpikes" index="31" instance=ExtResource( 2 )]
+position = Vector2( 1216, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike17" parent="Objects/HSpikes" index="32" instance=ExtResource( 2 )]
+position = Vector2( 1248, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike16" parent="Objects/HSpikes" index="33" instance=ExtResource( 2 )]
+position = Vector2( 1280, 256 )
+rotation = -3.14159
+z_index = 0
+
+[node name="PSpikes" type="Node2D" parent="Objects" index="2"]
+
+[node name="Spike" parent="Objects/PSpikes" index="0" instance=ExtResource( 3 )]
+position = Vector2( 800, 224 )
+z_index = 0
+
+[node name="Spike2" parent="Objects/PSpikes" index="1" instance=ExtResource( 3 )]
+position = Vector2( 832, 224 )
+z_index = 0
+
+[node name="Spike3" parent="Objects/PSpikes" index="2" instance=ExtResource( 3 )]
+position = Vector2( 864, 224 )
+z_index = 0
+
+[node name="Spike4" parent="Objects/PSpikes" index="3" instance=ExtResource( 3 )]
+position = Vector2( 896, 224 )
+z_index = 0
+
+[node name="Spike8" parent="Objects/PSpikes" index="4" instance=ExtResource( 3 )]
+position = Vector2( 928, 224 )
+z_index = 0
+
+[node name="Spike7" parent="Objects/PSpikes" index="5" instance=ExtResource( 3 )]
+position = Vector2( 960, 224 )
+z_index = 0
+
+[node name="Spike6" parent="Objects/PSpikes" index="6" instance=ExtResource( 3 )]
+position = Vector2( 992, 224 )
+z_index = 0
+
+[node name="Spike5" parent="Objects/PSpikes" index="7" instance=ExtResource( 3 )]
+position = Vector2( 1024, 224 )
+z_index = 0
+
+[node name="Spike12" parent="Objects/PSpikes" index="8" instance=ExtResource( 3 )]
+position = Vector2( 1056, 224 )
+z_index = 0
+
+[node name="Spike11" parent="Objects/PSpikes" index="9" instance=ExtResource( 3 )]
+position = Vector2( 1088, 224 )
+z_index = 0
+
+[node name="Spike10" parent="Objects/PSpikes" index="10" instance=ExtResource( 3 )]
+position = Vector2( 1120, 224 )
+z_index = 0
+
+[node name="Spike9" parent="Objects/PSpikes" index="11" instance=ExtResource( 3 )]
+position = Vector2( 1152, 224 )
+z_index = 0
+
+[node name="Spike16" parent="Objects/PSpikes" index="12" instance=ExtResource( 3 )]
+position = Vector2( 1184, 224 )
+z_index = 0
+
+[node name="Spike15" parent="Objects/PSpikes" index="13" instance=ExtResource( 3 )]
+position = Vector2( 1216, 224 )
+z_index = 0
+
+[node name="Spike14" parent="Objects/PSpikes" index="14" instance=ExtResource( 3 )]
+position = Vector2( 1248, 224 )
+z_index = 0
+
+[node name="Spike30" parent="Objects/PSpikes" index="15" instance=ExtResource( 3 )]
+position = Vector2( 832, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike29" parent="Objects/PSpikes" index="16" instance=ExtResource( 3 )]
+position = Vector2( 864, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike28" parent="Objects/PSpikes" index="17" instance=ExtResource( 3 )]
+position = Vector2( 896, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike27" parent="Objects/PSpikes" index="18" instance=ExtResource( 3 )]
+position = Vector2( 928, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike26" parent="Objects/PSpikes" index="19" instance=ExtResource( 3 )]
+position = Vector2( 960, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike25" parent="Objects/PSpikes" index="20" instance=ExtResource( 3 )]
+position = Vector2( 992, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike24" parent="Objects/PSpikes" index="21" instance=ExtResource( 3 )]
+position = Vector2( 1024, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike23" parent="Objects/PSpikes" index="22" instance=ExtResource( 3 )]
+position = Vector2( 1056, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike22" parent="Objects/PSpikes" index="23" instance=ExtResource( 3 )]
+position = Vector2( 1088, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike21" parent="Objects/PSpikes" index="24" instance=ExtResource( 3 )]
+position = Vector2( 1120, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike20" parent="Objects/PSpikes" index="25" instance=ExtResource( 3 )]
+position = Vector2( 1152, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike13" parent="Objects/PSpikes" index="26" instance=ExtResource( 3 )]
+position = Vector2( 1184, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike19" parent="Objects/PSpikes" index="27" instance=ExtResource( 3 )]
+position = Vector2( 1216, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike18" parent="Objects/PSpikes" index="28" instance=ExtResource( 3 )]
+position = Vector2( 1248, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Spike17" parent="Objects/PSpikes" index="29" instance=ExtResource( 3 )]
+position = Vector2( 1280, 96 )
+rotation = -3.14159
+z_index = 0
+
+[node name="Pipe" parent="." index="7"]
+position = Vector2( 1712.76, 92.8443 )
+rotation = -1.57079
+gravVec = Vector2( 0, -1 )

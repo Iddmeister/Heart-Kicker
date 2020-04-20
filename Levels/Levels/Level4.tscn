@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Spike/Spike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Images/Keyboard_White_Mouse_Right.png" type="Texture" id=3]
+
+[node name="Level" instance=ExtResource( 1 )]
+nextLevel = 5
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 3, 0, 65551, 3, 0, 65552, 3, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 65557, 3, 0, 65558, 3, 0, 65559, 3, 0, 65560, 3, 0, 65561, 3, 0, 65562, 3, 0, 131073, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131098, 3, 0, 196609, 3, 0, 196634, 3, 0, 262145, 3, 0, 262170, 3, 0, 327681, 3, 0, 327706, 3, 0, 327707, 3, 0, 327708, 3, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 393217, 3, 0, 393252, 3, 0, 458753, 3, 0, 524289, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 655369, 3, 0, 655396, 3, 0, 720905, 3, 0, 720922, 3, 0, 720923, 3, 0, 720924, 3, 0, 720925, 3, 0, 720926, 3, 0, 720927, 3, 0, 720928, 3, 0, 720929, 3, 0, 720930, 3, 0, 720931, 3, 0, 720932, 3, 0, 786441, 3, 0, 786458, 3, 0, 851977, 3, 0, 851994, 3, 0, 917513, 3, 0, 917530, 3, 0, 983049, 3, 0, 983050, 3, 0, 983051, 3, 0, 983052, 3, 0, 983053, 3, 0, 983054, 3, 0, 983055, 3, 0, 983056, 3, 0, 983057, 3, 0, 983058, 3, 0, 983059, 3, 0, 983060, 3, 0, 983061, 3, 0, 983062, 3, 0, 983063, 3, 0, 983064, 3, 0, 983065, 3, 0, 983066, 3, 0 )
+
+[node name="Player" parent="." index="2"]
+position = Vector2( 460.361, 458.616 )
+
+[node name="Heart" parent="." index="3"]
+position = Vector2( 176, 160 )
+
+[node name="HeartDispenser" parent="Objects" index="0"]
+position = Vector2( 176, 160 )
+
+[node name="Spike" parent="Objects" index="1" instance=ExtResource( 2 )]
+position = Vector2( 319.714, 308.824 )
+rotation = 1.57079
+
+[node name="Spike2" parent="Objects" index="2" instance=ExtResource( 2 )]
+position = Vector2( 319.714, 339 )
+rotation = 1.57079
+
+[node name="Spike3" parent="Objects" index="3" instance=ExtResource( 2 )]
+position = Vector2( 319.529, 369.522 )
+rotation = 1.57079
+
+[node name="Spike4" parent="Objects" index="4" instance=ExtResource( 2 )]
+position = Vector2( 319.529, 399.922 )
+rotation = 1.57079
+
+[node name="Mouse" type="Sprite" parent="Objects" index="5"]
+position = Vector2( 160, 415.922 )
+texture = ExtResource( 3 )
+
+[node name="Pipe" parent="." index="7"]
+position = Vector2( 1128.48, 270.793 )

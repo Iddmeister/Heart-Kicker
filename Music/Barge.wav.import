@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Barge.wav-2a7868eb5f214a02ef9a1cf163e0a87a.sample"
+
+[deps]
+
+source_file="res://Music/Barge.wav"
+dest_files=[ "res://.import/Barge.wav-2a7868eb5f214a02ef9a1cf163e0a87a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
